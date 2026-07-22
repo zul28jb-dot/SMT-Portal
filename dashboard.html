@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMT Portal - Dashboard</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <div class="logo">💰</div>
+            <div>
+                <strong>SMT Portal</strong>
+                <small>MZN Cloud</small>
+            </div>
+        </div>
+
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item active">📊 Dashboard</a>
+            <a href="#" class="menu-item">💳 Transaksi</a>
+            <a href="#" class="menu-item">📈 Laporan</a>
+            <a href="#" class="menu-item">🎯 Bajet</a>
+            <a href="#" class="menu-item">🏦 Simpanan</a>
+            <a href="#" class="menu-item">📉 Analisis</a>
+            <a href="#" class="menu-item">🔔 Notifikasi</a>
+            <a href="#" class="menu-item">👤 Profil</a>
+            <a href="#" class="menu-item">⚙️ Tetapan</a>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <div class="sidebar-footer">
+            <a href="index.html">← Kembali ke Landing Page</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <div>
+                <div class="welcome-text">Selamat pagi</div>
+                <h1>Dashboard</h1>
+            </div>
+            <div class="topbar-actions">
+                <button class="icon-button">🔔<span class="notification-dot"></span></button>
+                <div class="profile">
+                    <div class="avatar">JD</div>
+                    <div class="profile-info">
+                        <strong>John Doe</strong>
+                        <small>Premium Member</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-cards">
+            <div class="summary-card">
+                <div class="card-title">
+                    <div class="card-icon income-icon">📥</div>
+                    Pendapatan
+                </div>
+                <span class="amount">RM4,250</span>
+                <span class="change positive">↑ 12% dari bulan lepas</span>
+            </div>
+
+            <div class="summary-card">
+                <div class="card-title">
+                    <div class="card-icon expense-icon">📤</div>
+                    Perbelanjaan
+                </div>
+                <span class="amount">RM2,180</span>
+                <span class="change negative">↓ 8% dari bulan lepas</span>
+            </div>
+
+            <div class="summary-card">
+                <div class="card-title">
+                    <div class="card-icon balance-icon">💰</div>
+                    Baki Bersih
+                </div>
+                <span class="amount">RM2,070</span>
+                <span class="change positive">↑ Meningkat 20%</span>
+            </div>
+
+            <div class="summary-card score-card">
+                <div class="card-title">
+                    <div class="card-icon score-icon">⭐</div>
+                    Financial Score
+                </div>
+                <span class="amount">94</span>
+                <span class="change score-text">/ 100 - Cemerlang!</span>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-label">TREND BULANAN</div>
+                        <h2>Pendapatan vs Perbelanjaan</h2>
+                    </div>
+                    <select>
+                        <option>2026</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                    </select>
+                </div>
+
+                <div class="chart-area">
+                    <div class="chart-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="chart-bars">
+                        <div class="chart-column">
+                            <div class="bar income" style="height: 45%;"></div>
+                            <div class="bar expense" style="height: 28%;"></div>
+                            <small>Jan</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar income" style="height: 55%;"></div>
+                            <div class="bar expense" style="height: 32%;"></div>
+                            <small>Feb</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar income" style="height: 50%;"></div>
+                            <div class="bar expense" style="height: 38%;"></div>
+                            <small>Mac</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar income" style="height: 65%;"></div>
+                            <div class="bar expense" style="height: 42%;"></div>
+                            <small>Apr</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar income" style="height: 60%;"></div>
+                            <div class="bar expense" style="height: 45%;"></div>
+                            <small>Mei</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar income" style="height: 70%;"></div>
+                            <div class="bar expense" style="height: 50%;"></div>
+                            <small>Jun</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar income" style="height: 75%;"></div>
+                            <div class="bar expense" style="height: 48%;"></div>
+                            <small>Jul</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-legend">
+                    <span><i class="legend-income"></i> Pendapatan</span>
+                    <span><i class="legend-expense"></i> Perbelanjaan</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-label">BAJET BULANAN</div>
+                        <h2>Pengeluaran</h2>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                    <div class="budget-percent">73%</div>
+                    <div style="flex: 1;">
+                        <div class="progress-track">
+                            <div class="progress-value"></div>
+                        </div>
+                        <small style="color: var(--muted); margin-top: 10px; display: block;">RM1,594 dari RM2,200</small>
+                    </div>
+                </div>
+
+                <div class="budget-details">
+                    <div>
+                        <small>Bajet Digunakan</small>
+                        <strong>RM1,594</strong>
+                    </div>
+                    <div>
+                        <small>Sisa Bajet</small>
+                        <strong>RM606</strong>
+                    </div>
+                    <div>
+                        <small>Perbelanjaan Purata</small>
+                        <strong>RM199/hari</strong>
+                    </div>
+                    <div>
+                        <small>Hari Tinggal</small>
+                        <strong>8 hari</strong>
+                    </div>
+                </div>
+
+                <div class="budget-warning">
+                    ⚠️ Perbelanjaan Anda hampir mencapai bajet bulanan. Mulai jimat dari sekarang.
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid" style="margin-top: 20px;">
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-label">KATEGORI PERBELANJAAN</div>
+                        <h2>Top Kategori</h2>
+                    </div>
+                    <a href="#">Lihat Semua →</a>
+                </div>
+
+                <div class="category-list">
+                    <div class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon">🍔</div>
+                            <div>
+                                <strong>Makanan & Minuman</strong>
+                                <small>12 transaksi</small>
+                            </div>
+                        </div>
+                        <strong class="expense-amount">RM486</strong>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon">🚗</div>
+                            <div>
+                                <strong>Pengangkutan</strong>
+                                <small>8 transaksi</small>
+                            </div>
+                        </div>
+                        <strong class="expense-amount">RM320</strong>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon">🛍️</div>
+                            <div>
+                                <strong>Belanja Runcit</strong>
+                                <small>5 transaksi</small>
+                            </div>
+                        </div>
+                        <strong class="expense-amount">RM245</strong>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon">🎮</div>
+                            <div>
+                                <strong>Hiburan</strong>
+                                <small>3 transaksi</small>
+                            </div>
+                        </div>
+                        <strong class="expense-amount">RM150</strong>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-name">
+                            <div class="category-icon">🏥</div>
+                            <div>
+                                <strong>Kesihatan</strong>
+                                <small>2 transaksi</small>
+                            </div>
+                        </div>
+                        <strong class="expense-amount">RM89</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-label">TRANSAKSI TERKINI</div>
+                        <h2>Aktiviti Terbaru</h2>
+                    </div>
+                    <a href="#">Lihat Semua →</a>
+                </div>
+
+                <div class="transaction-list">
+                    <div class="transaction-item">
+                        <div class="transaction-left">
+                            <div class="transaction-icon">🍕</div>
+                            <div>
+                                <strong>Pizza Hut</strong>
+                                <small>Hari ini, 13:45</small>
+                            </div>
+                        </div>
+                        <span class="expense-amount">-RM62</span>
+                    </div>
+
+                    <div class="transaction-item">
+                        <div class="transaction-left">
+                            <div class="transaction-icon">💳</div>
+                            <div>
+                                <strong>Gaji Bulanan</strong>
+                                <small>Kemarin, 09:00</small>
+                            </div>
+                        </div>
+                        <span class="income-amount">+RM4,250</span>
+                    </div>
+
+                    <div class="transaction-item">
+                        <div class="transaction-left">
+                            <div class="transaction-icon">⛽</div>
+                            <div>
+                                <strong>Shell Petrol</strong>
+                                <small>2 hari yang lalu</small>
+                            </div>
+                        </div>
+                        <span class="expense-amount">-RM85</span>
+                    </div>
+
+                    <div class="transaction-item">
+                        <div class="transaction-left">
+                            <div class="transaction-icon">🛒</div>
+                            <div>
+                                <strong>Tesco Supermarket</strong>
+                                <small>3 hari yang lalu</small>
+                            </div>
+                        </div>
+                        <span class="expense-amount">-RM156</span>
+                    </div>
+
+                    <div class="transaction-item">
+                        <div class="transaction-left">
+                            <div class="transaction-icon">🎬</div>
+                            <div>
+                                <strong>Netflix Subscription</strong>
+                                <small>1 minggu yang lalu</small>
+                            </div>
+                        </div>
+                        <span class="expense-amount">-RM17.90</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-footer">
+            © 2026 Smart Money Tracker - Dipacu oleh MZN Cloud
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

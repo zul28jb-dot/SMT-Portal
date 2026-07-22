@@ -1,0 +1,251 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    color: #f8fafc;
+    background:
+        radial-gradient(circle at top right, #1d4ed8 0%, transparent 35%),
+        linear-gradient(135deg, #07111f, #0f172a 55%, #111827);
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: #2563eb;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+}
+
+.badge {
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    color: #bfdbfe;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+    padding: 70px 0 90px;
+}
+
+h1 {
+    max-width: 720px;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.03;
+    letter-spacing: -3px;
+}
+
+h1 span {
+    color: #60a5fa;
+}
+
+.subtitle {
+    max-width: 640px;
+    margin-top: 24px;
+    color: #cbd5e1;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 24px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.button-primary {
+    color: white;
+    background: #2563eb;
+    box-shadow: 0 14px 35px rgba(37, 99, 235, 0.35);
+}
+
+.button-secondary {
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 36px;
+}
+
+.feature {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #dbeafe;
+    font-size: 14px;
+}
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: rgba(37, 99, 235, 0.18);
+}
+
+.dashboard-card {
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    background: rgba(15, 23, 42, 0.76);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.status {
+    color: #4ade80;
+    font-size: 13px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.summary {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.055);
+}
+
+.summary small {
+    color: #94a3b8;
+}
+
+.summary strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 22px;
+}
+
+.score {
+    margin-top: 14px;
+    padding: 20px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+}
+
+.score strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 34px;
+}
+
+.chart {
+    display: flex;
+    align-items: end;
+    gap: 9px;
+    height: 120px;
+    margin-top: 18px;
+    padding: 20px 16px 8px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.bar {
+    flex: 1;
+    min-height: 18px;
+    border-radius: 7px 7px 2px 2px;
+    background: linear-gradient(#60a5fa, #2563eb);
+}
+
+footer {
+    padding: 24px 0 34px;
+    color: #64748b;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 820px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+}
+
+@media (max-width: 520px) {
+    .badge {
+        display: none;
+    }
+
+    .features,
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+

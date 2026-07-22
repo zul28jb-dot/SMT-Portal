@@ -1,373 +1,180 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SMT Portal | Smart Money Tracker</title>
+    <title>SMT Portal | Smart Money Tracker</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      color: #f8fafc;
-      background:
-        radial-gradient(circle at top right, #1d4ed8 0%, transparent 35%),
-        linear-gradient(135deg, #07111f, #0f172a 55%, #111827);
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 28px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    .logo {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: #2563eb;
-      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
-    }
-
-    .badge {
-      padding: 8px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 999px;
-      color: #bfdbfe;
-      background: rgba(255, 255, 255, 0.06);
-      font-size: 13px;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 56px;
-      align-items: center;
-      padding: 70px 0 90px;
-    }
-
-    h1 {
-      max-width: 720px;
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.03;
-      letter-spacing: -3px;
-    }
-
-    h1 span {
-      color: #60a5fa;
-    }
-
-    .subtitle {
-      max-width: 640px;
-      margin-top: 24px;
-      color: #cbd5e1;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 24px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .button-primary {
-      color: white;
-      background: #2563eb;
-      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.35);
-    }
-
-    .button-secondary {
-      color: #e2e8f0;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 36px;
-    }
-
-    .feature {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      color: #dbeafe;
-      font-size: 14px;
-    }
-
-    .feature-icon {
-      display: grid;
-      place-items: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 9px;
-      background: rgba(37, 99, 235, 0.18);
-    }
-
-    .dashboard-card {
-      padding: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 28px;
-      background: rgba(15, 23, 42, 0.76);
-      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(18px);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 22px;
-    }
-
-    .status {
-      color: #4ade80;
-      font-size: 13px;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .summary {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.055);
-    }
-
-    .summary small {
-      color: #94a3b8;
-    }
-
-    .summary strong {
-      display: block;
-      margin-top: 8px;
-      font-size: 22px;
-    }
-
-    .score {
-      margin-top: 14px;
-      padding: 20px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #1d4ed8, #2563eb);
-    }
-
-    .score strong {
-      display: block;
-      margin-top: 8px;
-      font-size: 34px;
-    }
-
-    .chart {
-      display: flex;
-      align-items: end;
-      gap: 9px;
-      height: 120px;
-      margin-top: 18px;
-      padding: 20px 16px 8px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.045);
-    }
-
-    .bar {
-      flex: 1;
-      min-height: 18px;
-      border-radius: 7px 7px 2px 2px;
-      background: linear-gradient(#60a5fa, #2563eb);
-    }
-
-    footer {
-      padding: 24px 0 34px;
-      color: #64748b;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    @media (max-width: 820px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 40px;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .badge {
-        display: none;
-      }
-
-      .features,
-      .summary-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-  <div class="container">
-    <nav>
-      <div class="brand">
-        <div class="logo">💰</div>
-        <span>SMT Portal</span>
-      </div>
 
-      <div class="badge">Powered by MZN Cloud</div>
+<div class="container">
+
+    <nav>
+
+        <div class="brand">
+            <div class="logo">💰</div>
+            <span>SMT Portal</span>
+        </div>
+
+        <div class="badge">
+            Powered by MZN Cloud
+        </div>
+
     </nav>
 
     <main class="hero">
-      <section>
-        <h1>
-          Urus kewangan dengan lebih <span>bijak.</span>
-        </h1>
 
-        <p class="subtitle">
-          Smart Money Tracker membantu anda merekod transaksi, mengimbas resit,
-          mengawal bajet dan memahami kedudukan kewangan melalui satu portal
-          yang ringkas dan mudah digunakan.
-        </p>
+        <section>
 
-        <div class="actions">
-          <a class="button button-primary" href="#">
-            Buka melalui Telegram
-          </a>
+            <h1>
+                Urus kewangan dengan lebih
+                <span>bijak.</span>
+            </h1>
 
-          <a class="button button-secondary" href="#features">
-            Lihat ciri
-          </a>
-        </div>
+            <p class="subtitle">
 
-        <div class="features" id="features">
-          <div class="feature">
-            <span class="feature-icon">📷</span>
-            OCR resit automatik
-          </div>
+                Smart Money Tracker membantu anda merekod transaksi,
+                mengimbas resit, mengawal bajet dan memahami kedudukan
+                kewangan melalui satu portal yang ringkas dan mudah digunakan.
 
-          <div class="feature">
-            <span class="feature-icon">📊</span>
-            Dashboard masa nyata
-          </div>
+            </p>
 
-          <div class="feature">
-            <span class="feature-icon">🎯</span>
-            Pemantauan bajet
-          </div>
+            <div class="actions">
 
-          <div class="feature">
-            <span class="feature-icon">🔔</span>
-            Amaran kewangan
-          </div>
-        </div>
-      </section>
+                <a class="button button-primary"
+                   href="https://t.me/perbelanjaanAKu_bot"
+                   target="_blank">
 
-      <section class="dashboard-card">
-        <div class="card-header">
-          <div>
-            <small>Ringkasan bulan ini</small>
-            <h2>Dashboard</h2>
-          </div>
+                    🚀 Login dengan Telegram
 
-          <div class="status">● Aktif</div>
-        </div>
+                </a>
 
-        <div class="summary-grid">
-          <div class="summary">
-            <small>Pendapatan</small>
-            <strong>RM4,250</strong>
-          </div>
+                <a class="button button-secondary"
+                   href="#features">
 
-          <div class="summary">
-            <small>Perbelanjaan</small>
-            <strong>RM2,180</strong>
-          </div>
+                    Lihat Ciri
 
-          <div class="summary">
-            <small>Baki bersih</small>
-            <strong>RM2,070</strong>
-          </div>
+                </a>
 
-          <div class="summary">
-            <small>Simpanan</small>
-            <strong>RM850</strong>
-          </div>
-        </div>
+            </div>
 
-        <div class="score">
-          <small>Financial Health Score</small>
-          <strong>94 / 100</strong>
-        </div>
+            <div class="features" id="features">
 
-        <div class="chart">
-          <div class="bar" style="height: 38%"></div>
-          <div class="bar" style="height: 58%"></div>
-          <div class="bar" style="height: 46%"></div>
-          <div class="bar" style="height: 78%"></div>
-          <div class="bar" style="height: 66%"></div>
-          <div class="bar" style="height: 92%"></div>
-          <div class="bar" style="height: 73%"></div>
-        </div>
-      </section>
+                <div class="feature">
+                    <span class="feature-icon">📷</span>
+                    OCR Resit Automatik
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">📊</span>
+                    Dashboard Masa Nyata
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">🎯</span>
+                    Pengurusan Bajet
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">🔔</span>
+                    Smart Alert
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <small>Ringkasan Bulan Ini</small>
+
+                    <h2>Dashboard</h2>
+
+                </div>
+
+                <div class="status">
+
+                    ● Aktif
+
+                </div>
+
+            </div>
+
+            <div class="summary-grid">
+
+                <div class="summary">
+
+                    <small>Pendapatan</small>
+
+                    <strong>RM4,250</strong>
+
+                </div>
+
+                <div class="summary">
+
+                    <small>Perbelanjaan</small>
+
+                    <strong>RM2,180</strong>
+
+                </div>
+
+                <div class="summary">
+
+                    <small>Baki Bersih</small>
+
+                    <strong>RM2,070</strong>
+
+                </div>
+
+                <div class="summary">
+
+                    <small>Simpanan</small>
+
+                    <strong>RM850</strong>
+
+                </div>
+
+            </div>
+
+            <div class="score">
+
+                <small>Financial Health Score</small>
+
+                <strong>94 / 100</strong>
+
+            </div>
+
+            <div class="chart">
+
+                <div class="bar" style="height:38%"></div>
+                <div class="bar" style="height:58%"></div>
+                <div class="bar" style="height:46%"></div>
+                <div class="bar" style="height:78%"></div>
+                <div class="bar" style="height:66%"></div>
+                <div class="bar" style="height:92%"></div>
+                <div class="bar" style="height:73%"></div>
+
+            </div>
+
+        </section>
+
     </main>
 
     <footer>
-      © 2026 Smart Money Tracker · MZN Cloud
+
+        © 2026 Smart Money Tracker
+
     </footer>
-  </div>
+
+</div>
+
 </body>
 </html>
