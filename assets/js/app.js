@@ -2,8 +2,42 @@
 
 // Initialize app on page load
 document.addEventListener('DOMContentLoaded', function() {
-    initializeDashboard();
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    if (currentPage === 'index.html' || currentPage === '') {
+        // Initialize landing page
+        initializeLandingPage();
+    } else if (currentPage === 'dashboard.html') {
+        // Initialize dashboard
+        initializeDashboard();
+    }
 });
+
+/**
+ * Initialize landing page functionality
+ */
+function initializeLandingPage() {
+    // Setup smooth scrolling for anchor links
+    setupSmoothScroll();
+    console.log('[APP] Landing page initialized');
+}
+
+/**
+ * Setup smooth scroll for anchor links
+ */
+function setupSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
 
 /**
  * Initialize dashboard functionality
@@ -15,6 +49,7 @@ function initializeDashboard() {
     // Add interactive features
     initializeButtons();
     initializeCharts();
+    console.log('[APP] Dashboard initialized');
 }
 
 /**
@@ -93,21 +128,6 @@ function formatCurrency(amount) {
         minimumFractionDigits: 2
     }).format(amount);
 }
-
-/**
- * Smooth scroll for anchor links
- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
 
 /**
  * Export data utilities

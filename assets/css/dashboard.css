@@ -107,12 +107,41 @@ body {
 .sidebar-footer {
   margin-top: auto;
   padding: 20px 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .sidebar-footer a {
   color: var(--muted);
   text-decoration: none;
   font-size: 12px;
+  transition: 0.2s ease;
+}
+
+.sidebar-footer a:hover {
+  color: var(--text);
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  color: var(--red);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  color: white;
+  background: rgba(248, 113, 113, 0.15);
+  border-color: var(--red);
 }
 
 .main-content {
