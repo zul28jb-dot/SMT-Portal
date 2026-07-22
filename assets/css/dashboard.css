@@ -126,6 +126,7 @@ body {
 .logout-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 10px 15px;
   border: 1px solid var(--red);
@@ -134,14 +135,21 @@ body {
   background: transparent;
   font-size: 12px;
   font-weight: 600;
+  font-family: Arial, sans-serif;
   cursor: pointer;
   transition: 0.2s ease;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 36px;
 }
 
 .logout-btn:hover {
   color: white;
   background: rgba(248, 113, 113, 0.15);
   border-color: var(--red);
+  transform: translateY(-1px);
 }
 
 .main-content {
@@ -588,10 +596,22 @@ body {
   .sidebar-menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
   }
 
   .sidebar-footer {
-    display: none;
+    margin-top: 10px;
+    padding: 10px 8px 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logout-btn {
+    padding: 8px 12px;
+    font-size: 11px;
+    width: 100%;
   }
 
   .main-content {

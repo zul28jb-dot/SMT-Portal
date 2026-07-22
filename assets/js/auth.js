@@ -215,10 +215,14 @@ const Auth = {
     setupLogoutButton: function() {
         const logoutButton = document.getElementById('logout-button');
         if (logoutButton) {
-            logoutButton.addEventListener('click', function() {
+            logoutButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 Auth.logout();
             });
-            console.log('[AUTH] Logout button initialized');
+            console.log('[AUTH] Logout button initialized successfully');
+        } else {
+            console.warn('[AUTH] Logout button not found in DOM');
         }
     }
 };
