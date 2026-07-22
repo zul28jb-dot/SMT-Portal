@@ -71,11 +71,12 @@ body {
 
 .sidebar-menu {
   display: flex;
-  flex-direction: column;
-  gap: 7px;
   flex: 1;
   min-height: 0;
+  flex-direction: column;
+  gap: 7px;
   overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .menu-item {
@@ -137,8 +138,6 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 100%;
-  min-height: 36px;
   padding: 10px 15px;
   border: 1px solid var(--red);
   border-radius: 10px;
@@ -149,6 +148,11 @@ body {
   font-family: Arial, sans-serif;
   cursor: pointer;
   transition: 0.2s ease;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 36px;
 }
 
 .logout-btn:hover {
@@ -389,7 +393,6 @@ body {
 }
 
 .chart-column {
-  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -397,6 +400,7 @@ body {
   width: 13%;
   height: 100%;
   padding-bottom: 28px;
+  position: relative;
 }
 
 .chart-column small {
@@ -597,24 +601,30 @@ body {
     position: static;
     width: 100%;
     min-height: auto;
+    overflow: visible;
   }
 
   .sidebar-menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 7px;
+    overflow: visible;
   }
+
 
   .sidebar-footer {
     margin-top: 10px;
     padding: 10px 8px 0;
     border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .logout-btn {
-    width: 100%;
     padding: 8px 12px;
     font-size: 11px;
+    width: 100%;
   }
 
   .main-content {
